@@ -20,6 +20,7 @@ interface VslPageProps {
 
 interface VariantConfig {
   analyticsPageName: string;
+  previewVideoUrl?: string;
   videoTitle: string;
   videoUrl: string;
   videoDuration: string;
@@ -67,6 +68,8 @@ const variantConfig: Record<VslVariant, VariantConfig> = {
   },
   wh: {
     analyticsPageName: "vsl-wh",
+    previewVideoUrl:
+      "https://player.vimeo.com/video/1184860847?h=9d3869975f&badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&vimeo_logo=0&controls=0",
     videoTitle: "What If The Problem Isn't Your Ads",
     videoUrl: "https://player.vimeo.com/video/1184860847?h=9d3869975f&badge=0&autopause=0&player_id=0&app_id=58479",
     videoDuration: "unknown",
@@ -91,7 +94,7 @@ export default function VslPage({ variant }: VslPageProps) {
   const videoRef = useRef<HTMLIFrameElement>(null);
   const [videoStarted, setVideoStarted] = useState(false);
   const config = variantConfig[variant];
-  const videoSrc = videoStarted ? `${config.videoUrl}&autoplay=1` : config.videoUrl;
+  const videoSrc = videoStarted ? `${config.videoUrl}&autoplay=1` : (config.previewVideoUrl ?? config.videoUrl);
 
   useEffect(() => {
     if (variant !== "bh") {
