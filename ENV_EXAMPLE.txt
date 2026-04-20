@@ -1,0 +1,17 @@
+# Copia questo contenuto in un file chiamato .env.local nella root del progetto
+
+# Meta Pixel ID - ID reale di Lorea Agency
+NEXT_PUBLIC_META_PIXEL_ID=1379601219359267
+
+# Google Tag Manager ID (formato: GTM-XXXXXXX)
+# Ottieni il tuo GTM ID da: https://tagmanager.google.com
+# NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX
+
+# Google Ads Conversion Tracking
+# Conversion ID e Label per tracciare i click sul pulsante Telegram
+NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_ID=17685540605
+NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL=JUKFCJ_9krYbEP3dj_FB
+ 
+# Altre variabili d'ambiente che potresti voler aggiungere in futuro:
+# NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=G-XXXXXXXXXX
+# NEXT_PUBLIC_SITE_URL=https://lorea.agency 
