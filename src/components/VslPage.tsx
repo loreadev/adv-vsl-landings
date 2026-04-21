@@ -106,26 +106,26 @@ const variantConfig: Record<VslVariant, VariantConfig> = {
     videoDuration: "unknown",
     headline: () => (
       <>
-        <span className="block">
-          What If The Problem Isn&apos;t{" "}
+        <span className="block sm:whitespace-nowrap">
+          What if the problem isn&apos;t{" "}
           <span className="inline-block whitespace-nowrap bg-gradient-to-r from-[#00A747] to-[#00712E] bg-clip-text text-transparent font-black">
-            Your Ads
-          </span>
+            your ads
+          </span>{" "}
+          but
         </span>
-        <span className="block">But</span>
         <span className="block">
-          The{" "}
+          the{" "}
           <span className="inline-block whitespace-nowrap bg-gradient-to-r from-[#FF0000] to-[#990000] bg-clip-text text-transparent font-black">
-            Account
+            account
           </span>
-          {" "}They&apos;re Running On?
+          {" "}they&apos;re running on?
         </span>
       </>
     ),
     subheadline: (
       <>
         <span className="block">
-          Meta assigns a <span className="font-black text-white">hidden performance grade</span> to every Business Manager.
+          Meta assigns a <span className="font-black text-white">hidden performance tier</span> to every Business Manager.
         </span>
         <span className="block mt-3">
           If yours is low, no creative, no hook, no audience will save you.
