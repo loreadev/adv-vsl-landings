@@ -91,7 +91,7 @@ const bhHeadline = (showStrikethrough: boolean) => (
 
 const variantConfig: Record<VslVariant, VariantConfig> = {
   bh: {
-    analyticsPageName: "vsl-bh",
+    analyticsPageName: "vsl",
     videoTitle: "Aliexpress, Temu e Amazon VSL",
     videoUrl: "https://player.vimeo.com/video/1093797611?h=5bfabfa6f6&badge=0&autopause=0&player_id=0&app_id=58479",
     videoDuration: "5:30",
@@ -122,7 +122,7 @@ const variantConfig: Record<VslVariant, VariantConfig> = {
               <span className="font-black">ADaccount</span>
             </span>
           </span>
-          {" "}they&apos;re running on
+          {" "}you&apos;re running on
         </span>
       </>
     ),
