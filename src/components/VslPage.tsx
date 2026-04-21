@@ -31,10 +31,33 @@ interface VariantConfig {
 
 const bhHeadline = (showStrikethrough: boolean) => (
   <>
-    <span className="block sm:w-fit sm:mx-auto sm:whitespace-nowrap">
+    <span className="sm:hidden">
+      What&apos;s the secret service that companies like{" "}
+      <span className="relative inline-block">
+        <span className="bg-gradient-to-r from-orange-400 to-red-500 text-black font-black px-3 py-0.5 rounded-lg shadow-xl text-2xl whitespace-nowrap">
+          AliExpress, Temu, Amazon
+        </span>
+      </span>{" "}
+      use every day to run ads that{" "}
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400 font-bold">
+        CLEARLY VIOLATE
+      </span>{" "}
+      policies and never get{" "}
+      <span className="relative inline-block">
+        <span className="text-white font-bold">banned</span>
+        <span
+          className={`absolute top-1/2 left-0 h-1 bg-red-500 transition-all duration-1000 ease-out ${
+            showStrikethrough ? "w-full" : "w-0"
+          }`}
+          style={{ transform: "translateY(-50%)" }}
+        />
+      </span>
+      ?
+    </span>
+    <span className="hidden sm:block sm:w-fit sm:mx-auto sm:whitespace-nowrap">
       What&apos;s the secret service that companies
     </span>
-    <span className="block sm:w-fit sm:mx-auto sm:whitespace-nowrap">
+    <span className="hidden sm:block sm:w-fit sm:mx-auto sm:whitespace-nowrap">
       like{" "}
       <span className="relative inline-block">
         <span className="bg-gradient-to-r from-orange-400 to-red-500 text-black font-black px-3 py-0.5 sm:px-3 sm:py-0.5 lg:px-4 lg:py-0.5 rounded-lg lg:rounded-xl shadow-xl text-2xl sm:text-[1.84rem] md:text-[2.08rem] lg:text-[2.3rem] xl:text-[2.56rem] whitespace-nowrap">
@@ -43,14 +66,14 @@ const bhHeadline = (showStrikethrough: boolean) => (
       </span>{" "}
       use
     </span>
-    <span className="block sm:w-fit sm:mx-auto sm:whitespace-nowrap">every day to run ads that</span>
-    <span className="block sm:w-fit sm:mx-auto sm:whitespace-nowrap">
+    <span className="hidden sm:block sm:w-fit sm:mx-auto sm:whitespace-nowrap">every day to run ads that</span>
+    <span className="hidden sm:block sm:w-fit sm:mx-auto sm:whitespace-nowrap">
       <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400 font-bold">
         CLEARLY VIOLATE
       </span>{" "}
       policies
     </span>
-    <span className="block sm:w-fit sm:mx-auto sm:whitespace-nowrap">
+    <span className="hidden sm:block sm:w-fit sm:mx-auto sm:whitespace-nowrap">
       and never get{" "}
       <span className="relative inline-block">
         <span className="text-white font-bold">banned</span>
