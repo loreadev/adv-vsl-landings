@@ -30,8 +30,8 @@ export const useUTMPayload = () => {
   }, []);
 
   const telegramDeepLink = payload
-    ? `tg://resolve?domain=lorea_metaplug_bot&start=${payload}`
-    : 'tg://resolve?domain=lorea_metaplug_bot&start=';
+    ? `tg://resolve?domain=LOREANEW_BOT&start=${payload}`
+    : 'tg://resolve?domain=LOREANEW_BOT&start=';
 
   return {
     payload,

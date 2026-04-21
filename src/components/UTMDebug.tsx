@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { useUTMPayload } from '@/hooks/useUTMPayload';
 
 interface UTMDebugProps {
@@ -8,6 +9,11 @@ interface UTMDebugProps {
 
 export default function UTMDebug({ show = false }: UTMDebugProps) {
   const { payload, telegramDeepLink, hasUTM } = useUTMPayload();
+  const [currentUrl, setCurrentUrl] = useState('Loading...');
+
+  useEffect(() => {
+    setCurrentUrl(window.location.href);
+  }, []);
 
   // Mostra solo in modalità debug
   if (!show) return null;
@@ -57,7 +63,7 @@ export default function UTMDebug({ show = false }: UTMDebugProps) {
         <div className="mt-2 pt-2 border-t border-gray-600">
           <span className="text-gray-400">Current URL:</span>
           <div className="bg-gray-800 p-2 rounded mt-1 break-all text-xs">
-            {typeof window !== 'undefined' ? window.location.href : 'Loading...'}
+            {currentUrl}
           </div>
         </div>
       </div>

@@ -72,30 +72,35 @@ const variantConfig: Record<VslVariant, VariantConfig> = {
     videoDuration: "unknown",
     headline: () => (
       <>
-        <span className="block">What If The Problem Isn&apos;t</span>
         <span className="block">
-          <span className="bg-gradient-to-r from-[#00A747] to-[#00712E] bg-clip-text text-transparent">Your Ads</span>
-        </span>
-        <span className="block">
-          <span className="bg-gradient-to-r from-[#FF0000] to-[#990000] bg-clip-text text-transparent">
-            &mdash; But The Account They&apos;re Running On?
+          What If The Problem Isn&apos;t{" "}
+          <span className="inline-block whitespace-nowrap bg-gradient-to-r from-[#00A747] to-[#00712E] bg-clip-text text-transparent font-black">
+            Your Ads
           </span>
+        </span>
+        <span className="block">But</span>
+        <span className="block">
+          The{" "}
+          <span className="inline-block whitespace-nowrap bg-gradient-to-r from-[#FF0000] to-[#990000] bg-clip-text text-transparent font-black">
+            Account
+          </span>
+          {" "}They&apos;re Running On?
         </span>
       </>
     ),
     subheadline: (
       <>
         <span className="block">
-          Meta assigns a <strong>hidden performance grade</strong> to every Business Manager.
+          Meta assigns a <span className="font-black text-white">hidden performance grade</span> to every Business Manager.
         </span>
         <span className="block mt-3">
           If yours is low, no creative, no hook, no audience will save you.
         </span>
         <span className="block mt-3">
-          Here&apos;s how e-commerce brands are <strong>bypassing the system</strong>
+          Here&apos;s how e-commerce brands are <span className="font-black text-white">bypassing the system</span>
         </span>
         <span className="block mt-3">
-          and scaling with <strong>unfair CPMs</strong> from day one.
+          and scaling with <span className="font-black text-white">unfair CPMs</span> from day one.
         </span>
       </>
     ),
