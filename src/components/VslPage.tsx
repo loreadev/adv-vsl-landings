@@ -31,27 +31,38 @@ interface VariantConfig {
 
 const bhHeadline = (showStrikethrough: boolean) => (
   <>
-    What&apos;s the secret service companies like{" "}
-    <span className="relative block sm:inline-block">
-      <span className="bg-gradient-to-r from-orange-400 to-red-500 text-black font-black px-3 py-0.5 sm:px-3 sm:py-0.5 lg:px-4 lg:py-0.5 rounded-lg lg:rounded-xl shadow-xl text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl whitespace-nowrap">
-        Aliexpress, Temu, Amazon
-      </span>
-    </span>{" "}
-    use every single day to run{" "}
-    <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400 font-bold">
-      outrageous ads
-    </span>{" "}
-    without ever getting{" "}
-    <span className="relative inline-block">
-      <span className="text-white font-bold">banned</span>
-      <span
-        className={`absolute top-1/2 left-0 h-1 lg:h-1.5 bg-red-500 transition-all duration-1000 ease-out ${
-          showStrikethrough ? "w-full" : "w-0"
-        }`}
-        style={{ transform: "translateY(-50%)" }}
-      />
+    <span className="block sm:w-fit sm:mx-auto sm:whitespace-nowrap">
+      What&apos;s the secret service that companies
     </span>
-    ?
+    <span className="block sm:w-fit sm:mx-auto sm:whitespace-nowrap">
+      like{" "}
+      <span className="relative inline-block">
+        <span className="bg-gradient-to-r from-orange-400 to-red-500 text-black font-black px-3 py-0.5 sm:px-3 sm:py-0.5 lg:px-4 lg:py-0.5 rounded-lg lg:rounded-xl shadow-xl text-2xl sm:text-[1.84rem] md:text-[2.08rem] lg:text-[2.3rem] xl:text-[2.56rem] whitespace-nowrap">
+          AliExpress, Temu, Amazon
+        </span>
+      </span>{" "}
+      use
+    </span>
+    <span className="block sm:w-fit sm:mx-auto sm:whitespace-nowrap">every day to run ads that</span>
+    <span className="block sm:w-fit sm:mx-auto sm:whitespace-nowrap">
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400 font-bold">
+        CLEARLY VIOLATE
+      </span>{" "}
+      policies
+    </span>
+    <span className="block sm:w-fit sm:mx-auto sm:whitespace-nowrap">
+      and never get{" "}
+      <span className="relative inline-block">
+        <span className="text-white font-bold">banned</span>
+        <span
+          className={`absolute top-1/2 left-0 h-1 lg:h-1.5 bg-red-500 transition-all duration-1000 ease-out ${
+            showStrikethrough ? "w-full" : "w-0"
+          }`}
+          style={{ transform: "translateY(-50%)" }}
+        />
+      </span>
+      ?
+    </span>
   </>
 );
 
@@ -116,8 +127,22 @@ export default function VslPage({ variant }: VslPageProps) {
   const { hasUTM } = useUTMPayload();
   const videoRef = useRef<HTMLIFrameElement>(null);
   const [videoStarted, setVideoStarted] = useState(false);
+  const isWh = variant === "wh";
+  const isBh = variant === "bh";
   const config = variantConfig[variant];
   const videoSrc = videoStarted ? `${config.videoUrl}&autoplay=1` : config.videoUrl;
+  const heroStackClassName = isWh ? "space-y-6 sm:space-y-10 lg:space-y-14" : "space-y-8 sm:space-y-10 lg:space-y-14";
+  const headlineClassName = isWh
+    ? "text-[1.72rem] sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-bold leading-[0.98] tracking-[-0.05em] max-w-[21rem] mx-auto sm:max-w-none sm:leading-tight sm:tracking-tight"
+    : isBh
+      ? "text-2xl sm:text-[1.84rem] md:text-[2.08rem] lg:text-[2.3rem] xl:text-[2.56rem] font-bold leading-tight tracking-tight"
+      : "text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-bold leading-tight tracking-tight";
+  const subheadlineClassName = isWh
+    ? "text-[0.98rem] sm:text-lg lg:text-xl text-gray-200 max-w-[20.75rem] sm:max-w-3xl mx-auto leading-[1.42] sm:leading-relaxed"
+    : "text-base sm:text-lg lg:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed";
+  const ctaClassName = isWh
+    ? "relative group inline-flex w-full max-w-[20.75rem] sm:w-auto bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 hover:from-blue-500 hover:via-purple-500 hover:to-blue-600 text-white font-bold py-3.5 px-5 lg:py-4 lg:px-8 rounded-xl text-[0.95rem] sm:text-base lg:text-lg transition-all duration-300 shadow-2xl hover:shadow-purple-500/30 hover:scale-[1.02] items-center justify-center gap-2 sm:gap-3 border border-white/10 hover:border-white/20 no-underline"
+    : "relative group inline-flex w-auto bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 hover:from-blue-500 hover:via-purple-500 hover:to-blue-600 text-white font-bold py-3 px-6 lg:py-4 lg:px-8 rounded-xl text-sm sm:text-base lg:text-lg transition-all duration-300 shadow-2xl hover:shadow-purple-500/30 hover:scale-[1.02] items-center justify-center gap-2 sm:gap-3 border border-white/10 hover:border-white/20 no-underline";
 
   useEffect(() => {
     if (variant !== "bh") {
@@ -166,34 +191,34 @@ export default function VslPage({ variant }: VslPageProps) {
       <UTMDebug show={process.env.NODE_ENV === "development"} />
 
       <div className={`min-h-screen bg-gradient-to-br from-gray-900 via-black to-black text-white ${inter.className}`}>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12 flex flex-col min-h-screen">
-          <div className="text-center mb-6 sm:mb-8 lg:mb-4">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8 lg:py-12 flex flex-col min-h-screen">
+          <div className="text-center mb-4 sm:mb-8 lg:mb-4">
             <a
               href="https://lorea.agency"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center p-3 lg:px-4 rounded-xl bg-white border border-white/20 shadow-lg no-underline"
+              className="inline-flex items-center justify-center px-3 py-2 sm:p-3 lg:px-4 rounded-xl bg-white border border-white/20 shadow-lg no-underline"
             >
               <Image
                 src="/logo.svg"
                 alt="Lorea"
                 width={419}
                 height={97}
-                className="w-16 sm:w-20 lg:w-28 filter brightness-0"
+                className="w-14 sm:w-20 lg:w-28 filter brightness-0"
               />
             </a>
           </div>
 
-          <div className="flex-1 flex flex-col justify-center space-y-8 sm:space-y-10 lg:space-y-14">
-            <div className="text-center space-y-4 sm:space-y-6 lg:space-y-8">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-bold leading-tight tracking-tight">
+          <div className={`flex-1 flex flex-col justify-center ${heroStackClassName}`}>
+            <div className={`text-center ${isWh ? "space-y-3 sm:space-y-6 lg:space-y-8" : "space-y-4 sm:space-y-6 lg:space-y-8"}`}>
+              <h1 className={headlineClassName}>
                 {config.headline(showStrikethrough)}
               </h1>
             </div>
 
             {config.subheadline && (
-              <div className="text-center">
-                <p className="text-base sm:text-lg lg:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+              <div className={`text-center ${isWh ? "px-1" : ""}`}>
+                <p className={subheadlineClassName}>
                   {config.subheadline}
                 </p>
               </div>
@@ -201,11 +226,11 @@ export default function VslPage({ variant }: VslPageProps) {
 
             <div className="w-full">
               <div className="relative group">
-                <div className="absolute -inset-3 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 rounded-2xl lg:rounded-3xl blur-xl opacity-60 group-hover:opacity-100 transition-all duration-500" />
-                <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl lg:rounded-3xl opacity-75 animate-pulse" />
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-gray-800 to-gray-900 rounded-2xl lg:rounded-3xl" />
+                <div className="absolute -inset-2 sm:-inset-3 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 rounded-[1.35rem] sm:rounded-2xl lg:rounded-3xl blur-lg sm:blur-xl opacity-60 group-hover:opacity-100 transition-all duration-500" />
+                <div className="absolute -inset-0.5 sm:-inset-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-[1.35rem] sm:rounded-2xl lg:rounded-3xl opacity-75 animate-pulse" />
+                <div className="absolute -inset-px sm:-inset-0.5 bg-gradient-to-r from-gray-800 to-gray-900 rounded-[1.35rem] sm:rounded-2xl lg:rounded-3xl" />
 
-                <div className="relative aspect-video bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl border-2 border-white/10 group-hover:border-white/20 transition-all duration-300">
+                <div className="relative aspect-video bg-gradient-to-br from-gray-800 to-gray-900 rounded-[1.35rem] sm:rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl border border-white/10 sm:border-2 group-hover:border-white/20 transition-all duration-300">
                   {!videoStarted && (
                     <button
                       aria-label="Avvia video"
@@ -232,7 +257,7 @@ export default function VslPage({ variant }: VslPageProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={handleCTAClick}
-                className={`relative group inline-flex w-auto bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 hover:from-blue-500 hover:via-purple-500 hover:to-blue-600 text-white font-bold py-3 px-6 lg:py-4 lg:px-8 rounded-xl text-sm sm:text-base lg:text-lg transition-all duration-300 shadow-2xl hover:shadow-purple-500/30 hover:scale-[1.02] items-center justify-center gap-2 sm:gap-3 border border-white/10 hover:border-white/20 no-underline ${inter.className}`}
+                className={`${ctaClassName} ${inter.className}`}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
                 <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24">
