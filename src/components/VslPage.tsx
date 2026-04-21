@@ -20,12 +20,11 @@ interface VslPageProps {
 
 interface VariantConfig {
   analyticsPageName: string;
-  previewVideoUrl?: string;
   videoTitle: string;
   videoUrl: string;
   videoDuration: string;
   headline: (showStrikethrough: boolean) => ReactNode;
-  subheadline?: string;
+  subheadline?: ReactNode;
   ctaLabel: string;
   ctaHref: string;
 }
@@ -64,25 +63,44 @@ const variantConfig: Record<VslVariant, VariantConfig> = {
     videoDuration: "5:30",
     headline: bhHeadline,
     ctaLabel: "Get Access NOW",
-    ctaHref: "https://telegram.me/lorea_metaplug",
+    ctaHref: "https://t.me/LOREANEW_BOT",
   },
   wh: {
     analyticsPageName: "vsl-wh",
-    previewVideoUrl:
-      "https://player.vimeo.com/video/1184860847?h=9d3869975f&badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&vimeo_logo=0&controls=0",
     videoTitle: "What If The Problem Isn't Your Ads",
     videoUrl: "https://player.vimeo.com/video/1184860847?h=9d3869975f&badge=0&autopause=0&player_id=0&app_id=58479",
     videoDuration: "unknown",
     headline: () => (
       <>
-        <span className="block">What If The Problem Isn&apos;t Your Ads</span>
-        <span className="block sm:inline"> &mdash; But The Account They&apos;re Running On?</span>
+        <span className="block">What If The Problem Isn&apos;t</span>
+        <span className="block">
+          <span className="bg-gradient-to-r from-[#00A747] to-[#00712E] bg-clip-text text-transparent">Your Ads</span>
+        </span>
+        <span className="block">
+          <span className="bg-gradient-to-r from-[#FF0000] to-[#990000] bg-clip-text text-transparent">
+            &mdash; But The Account They&apos;re Running On?
+          </span>
+        </span>
       </>
     ),
-    subheadline:
-      "Meta assigns a hidden performance grade to every Business Manager. If yours is low, no creative, no hook, no audience will save you. Here's how e-commerce brands are bypassing the system and scaling with unfair CPMs from day one.",
+    subheadline: (
+      <>
+        <span className="block">
+          Meta assigns a <strong>hidden performance grade</strong> to every Business Manager.
+        </span>
+        <span className="block mt-3">
+          If yours is low, no creative, no hook, no audience will save you.
+        </span>
+        <span className="block mt-3">
+          Here&apos;s how e-commerce brands are <strong>bypassing the system</strong>
+        </span>
+        <span className="block mt-3">
+          and scaling with <strong>unfair CPMs</strong> from day one.
+        </span>
+      </>
+    ),
     ctaLabel: "Get Access NOW",
-    ctaHref: "https://telegram.me/lorea_metaplug",
+    ctaHref: "https://t.me/LOREANEW_BOT",
   },
 };
 
@@ -94,7 +112,7 @@ export default function VslPage({ variant }: VslPageProps) {
   const videoRef = useRef<HTMLIFrameElement>(null);
   const [videoStarted, setVideoStarted] = useState(false);
   const config = variantConfig[variant];
-  const videoSrc = videoStarted ? `${config.videoUrl}&autoplay=1` : (config.previewVideoUrl ?? config.videoUrl);
+  const videoSrc = videoStarted ? `${config.videoUrl}&autoplay=1` : config.videoUrl;
 
   useEffect(() => {
     if (variant !== "bh") {
@@ -145,15 +163,20 @@ export default function VslPage({ variant }: VslPageProps) {
       <div className={`min-h-screen bg-gradient-to-br from-gray-900 via-black to-black text-white ${inter.className}`}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12 flex flex-col min-h-screen">
           <div className="text-center mb-6 sm:mb-8 lg:mb-4">
-            <div className="inline-block p-3 lg:px-4 rounded-xl bg-white/5 border border-white/10 shadow-lg">
+            <a
+              href="https://lorea.agency"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center p-3 lg:px-4 rounded-xl bg-white border border-white/20 shadow-lg no-underline"
+            >
               <Image
                 src="/logo.svg"
-                alt="Logo"
+                alt="Lorea"
                 width={419}
                 height={97}
-                className="w-16 sm:w-20 lg:w-28 filter brightness-0 invert"
+                className="w-16 sm:w-20 lg:w-28 filter brightness-0"
               />
-            </div>
+            </a>
           </div>
 
           <div className="flex-1 flex flex-col justify-center space-y-8 sm:space-y-10 lg:space-y-14">
