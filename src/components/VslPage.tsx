@@ -107,34 +107,49 @@ const variantConfig: Record<VslVariant, VariantConfig> = {
     headline: () => (
       <>
         <span className="block sm:whitespace-nowrap">
-          What if the problem isn&apos;t{" "}
-          <span className="inline-block whitespace-nowrap bg-gradient-to-r from-[#00A747] to-[#00712E] bg-clip-text text-transparent font-black">
-            your ads
+          The problem isn&apos;t{" "}
+          <span className="relative inline-block align-middle">
+            <span className="inline-block whitespace-nowrap rounded-lg bg-gradient-to-r from-[#8CF57D] to-[#00A747] px-2.5 py-0.5 text-black shadow-xl sm:px-3">
+              <span className="font-black">your Ads</span>
+            </span>
           </span>{" "}
           but
         </span>
         <span className="block">
           the{" "}
-          <span className="inline-block whitespace-nowrap bg-gradient-to-r from-[#FF0000] to-[#990000] bg-clip-text text-transparent font-black">
-            account
+          <span className="relative inline-block align-middle">
+            <span className="inline-block whitespace-nowrap rounded-lg bg-gradient-to-r from-[#FF8A64] to-[#FF0000] px-2.5 py-0.5 text-black shadow-xl sm:px-3">
+              <span className="font-black">ADaccount</span>
+            </span>
           </span>
-          {" "}they&apos;re running on?
+          {" "}they&apos;re running on
         </span>
       </>
     ),
     subheadline: (
       <>
         <span className="block">
-          Meta assigns a <span className="font-black text-white">hidden performance tier</span> to every Business Manager.
+          Meta assigns a{" "}
+          <span className="font-black text-transparent bg-clip-text bg-gradient-to-r from-[#00A747] to-[#00712E]">
+            hidden performance tier
+          </span>{" "}
+          to every Business Manager.
         </span>
         <span className="block mt-3">
-          If yours is low, no creative, no hook, no audience will save you.
+          If yours is low: no creative, no hook, no audience will save you.
         </span>
         <span className="block mt-3">
-          Here&apos;s how e-commerce brands are <span className="font-black text-white">bypassing the system</span>
+          Here&apos;s how e-commerce brands are{" "}
+          <span className="font-black text-transparent bg-clip-text bg-gradient-to-r from-[#FF0000] to-[#990000]">
+            bypassing the system
+          </span>
         </span>
         <span className="block mt-3">
-          and scaling with <span className="font-black text-white">unfair CPMs</span> from day one.
+          and scaling with{" "}
+          <span className="font-black text-transparent bg-clip-text bg-gradient-to-r from-[#00A747] to-[#00712E]">
+            unfair CPMs
+          </span>{" "}
+          from day one.
         </span>
       </>
     ),
@@ -163,6 +178,7 @@ export default function VslPage({ variant }: VslPageProps) {
   const subheadlineClassName = isWh
     ? "text-[0.98rem] sm:text-lg lg:text-xl text-gray-200 max-w-[20.75rem] sm:max-w-3xl mx-auto leading-[1.42] sm:leading-relaxed"
     : "text-base sm:text-lg lg:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed";
+  const subheadlineWrapperClassName = isWh ? "text-center px-1 -mt-2 sm:-mt-3" : "text-center";
   const ctaClassName = isWh
     ? "relative group inline-flex w-full max-w-[20.75rem] sm:w-auto bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 hover:from-blue-500 hover:via-purple-500 hover:to-blue-600 text-white font-bold py-3.5 px-5 lg:py-4 lg:px-8 rounded-xl text-[0.95rem] sm:text-base lg:text-lg transition-all duration-300 shadow-2xl hover:shadow-purple-500/30 hover:scale-[1.02] items-center justify-center gap-2 sm:gap-3 border border-white/10 hover:border-white/20 no-underline"
     : "relative group inline-flex w-auto bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 hover:from-blue-500 hover:via-purple-500 hover:to-blue-600 text-white font-bold py-3 px-6 lg:py-4 lg:px-8 rounded-xl text-sm sm:text-base lg:text-lg transition-all duration-300 shadow-2xl hover:shadow-purple-500/30 hover:scale-[1.02] items-center justify-center gap-2 sm:gap-3 border border-white/10 hover:border-white/20 no-underline";
@@ -240,7 +256,7 @@ export default function VslPage({ variant }: VslPageProps) {
             </div>
 
             {config.subheadline && (
-              <div className={`text-center ${isWh ? "px-1" : ""}`}>
+              <div className={subheadlineWrapperClassName}>
                 <p className={subheadlineClassName}>
                   {config.subheadline}
                 </p>
