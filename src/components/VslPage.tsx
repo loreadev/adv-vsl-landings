@@ -97,7 +97,7 @@ const variantConfig: Record<VslVariant, VariantConfig> = {
     videoDuration: "5:30",
     headline: bhHeadline,
     ctaLabel: "Get Access NOW",
-    ctaHref: "https://t.me/LOREANEW_BOT",
+    ctaHref: "https://t.me/LOREANEW_BOT?start=w53449451--bh",
   },
   wh: {
     analyticsPageName: "vsl-wh",
@@ -154,7 +154,7 @@ const variantConfig: Record<VslVariant, VariantConfig> = {
       </>
     ),
     ctaLabel: "Get Access NOW",
-    ctaHref: "https://t.me/LOREANEW_BOT",
+    ctaHref: "https://t.me/LOREANEW_BOT?start=w53449414--wh",
   },
 };
 
